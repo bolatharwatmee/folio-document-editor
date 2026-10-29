@@ -572,6 +572,35 @@ h4 {
   border-top: 1px solid var(--line);
 }
 
+.share-link-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 12px 14px;
+  background: var(--surface-secondary, rgba(0, 0, 0, 0.02));
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.share-link-details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.share-link-icon {
+  flex-shrink: 0;
+  color: var(--brand, #0d5c46);
+}
+
+.share-link-title {
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--text);
+}
+
 .modal-note {
   display: flex;
   align-items: flex-start;

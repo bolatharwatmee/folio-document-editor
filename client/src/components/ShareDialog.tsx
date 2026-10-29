@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Lock, Share2, UserPlus, X } from "lucide-react";
+import { Check, Link2, Lock, Share2, UserPlus, X } from "lucide-react";
 import { api, ApiError } from "../api";
 import type { DemoUser, ShareEntry } from "../types";
 import { formatDateTime } from "../utils";
@@ -31,6 +31,29 @@ export function ShareDialog({
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const copyLink = async () => {
+    const url = `${window.location.origin}/documents/${documentId}`;
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(url);
+      } else {
+        throw new Error("No clipboard API");
+      }
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      const input = document.createElement("input");
+      input.value = url;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand("copy");
+      document.body.removeChild(input);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
 
   const sharedIds = useMemo(
     () => new Set(shares.map((share) => share.user.id)),
@@ -297,6 +320,25 @@ export function ShareDialog({
             Everyone in the demo workspace already has access.
           </p>
         )}
+      </div>
+
+      <div className="share-link-banner">
+        <div className="share-link-details">
+          <Link2 size={16} className="share-link-icon" />
+          <div>
+            <div className="share-link-title">Share via direct link</div>
+            <div className="muted small">Anyone with access can use this link to open the document</div>
+          </div>
+        </div>
+        <button
+          type="button"
+          className="button button-secondary"
+          onClick={() => void copyLink()}
+          aria-label="Copy document link"
+        >
+          {copied ? <Check size={15} /> : <Link2 size={15} />}
+          {copied ? "Link copied!" : "Copy link"}
+        </button>
       </div>
 
       <div className="modal-note">
