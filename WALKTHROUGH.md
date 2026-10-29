@@ -58,7 +58,12 @@ Use this outline and rehearsal checklist to record the 3–5 minute walkthrough 
   - Briefly show terminal or mention the passing test suite:
     > *"All 12 automated integration tests pass, proving persistence across server restarts, concurrency rejection, and input sanitization."*
 
-### 6. Engineering Tradeoffs, AI Collaboration & Next Steps (3:20 – 4:00)
+### 6. Stretch Features, AI Collaboration & Next Steps (3:20 – 4:00)
 - **What to say**:
-  > *"In terms of engineering tradeoffs, I deliberately omitted real-time CRDT synchronization and binary cloud attachments to prioritize correctness, bulletproof access control, and complete test coverage within the time budget. I collaborated with AI for rapid scaffolding and test generation while maintaining human ownership over data modeling, concurrency control, and security boundaries. With an additional 2 to 4 hours, I would introduce document search, PDF export, and read-only viewer roles. Thank you!"*
-- **What to show**: Conclude on the clean Folio dashboard.
+  > *"Beyond the core requirements, I also implemented three high-leverage production stretch features: Document Export to Markdown, Plain Text, and Print-to-PDF; granular Read-Only Viewer roles preventing unauthorized writes with 403 Forbidden; and real-time multi-field dashboard search.*
+  >
+  > *In terms of engineering tradeoffs, I deliberately omitted real-time CRDT synchronization to prioritize correctness, bulletproof access control, and complete test coverage within the time budget. I collaborated with AI for rapid scaffolding and test generation while maintaining human ownership over data modeling, concurrency control, and security boundaries. All 14 automated integration tests pass with zero failures. Thank you!"*
+- **What to show**:
+  - Click Export menu (show Markdown, TXT, PDF).
+  - Show Real-time Search filter on Dashboard.
+  - Conclude on the clean Folio dashboard.

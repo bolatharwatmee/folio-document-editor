@@ -1,0 +1,16 @@
+# Folio — Live Product URL
+https://folio-document-editor.pages.dev
+
+Deployment Platform: Cloudflare Pages + Cloudflare D1 (Serverless SQLite)
+Status: LIVE & VERIFIED
+
+Reviewer Demo Access:
+1. Open https://folio-document-editor.pages.dev in any modern browser.
+2. Select any synthetic demo account from the login screen (no passwords needed):
+   - Alice Nguyen (usr_alice): Document owner account (owns "Welcome to Folio").
+   - Bob Ortega (usr_bob): Collaborator account (owns "Launch notes", shared recipient of Alice's welcome document).
+   - Carol Sato (usr_carol): Unrelated reviewer (owns private memo, completely isolated from Alice and Bob).
+3. Switch between accounts at any time from the account badge in the top-right navigation bar.
+
+Local Alternative:
+http://localhost:3000 (unified single-process production build with native node:sqlite)
