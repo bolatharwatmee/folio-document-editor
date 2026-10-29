@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: folio-editor
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_PATH
+        value: ./data/folio.db
+      - key: COOKIE_SECURE
+        value: "true"

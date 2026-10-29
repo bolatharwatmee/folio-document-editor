@@ -1,0 +1,10 @@
+# Folio — Walkthrough Video URL
+STATUS: PENDING CANDIDATE RECORDING
+
+Per the assessment instructions (Section "Walkthrough video: 3–5 minutes"):
+"Prepare WALKTHROUGH.md as an outline and checklist for me to record. The assignment requires a walkthrough of the result, not a recording of the entire development process. An unlisted Loom or YouTube link is acceptable... Do not fabricate a recorded video or publish one without approval. I own the recording, final review, and submission."
+
+REMAINING OWNER ACTION:
+1. Rehearse using the timed 4-minute script in WALKTHROUGH.md.
+2. Record the 3–5 minute screencast on Loom or YouTube (set visibility to Unlisted).
+3. Paste the unlisted video URL here (e.g., https://www.loom.com/share/... or https://youtu.be/...).

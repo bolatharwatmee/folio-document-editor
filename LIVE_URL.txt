@@ -1,0 +1,19 @@
+# Folio — Live Product URL
+STATUS: READY FOR ONE-CLICK DEPLOY (RECOMMENDED: RENDER.COM)
+
+A step-by-step free deployment guide has been prepared in DEPLOYMENT.md.
+Configuration files (render.yaml, fly.toml, and Dockerfile) are included in the repository.
+
+RECOMMENDED FREE PLATFORM: Render.com (Web Service Free Tier)
+1. Push this folder to a GitHub repository.
+2. On Render.com, click "New Web Service" -> connect your repo.
+3. Build Command: npm install && npm run build
+4. Start Command: npm start
+5. Plan: Free
+6. Once deployed, replace this text with your active HTTPS URL:
+   e.g. https://folio-document-editor.onrender.com
+
+LOCAL PRODUCTION TESTING:
+The full production build is verified locally and ready:
+- http://localhost:3000 (unified production build)
+- Pre-seeded synthetic accounts: Alice (owner), Bob (collaborator), Carol (unrelated reviewer).

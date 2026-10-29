@@ -1,0 +1,22 @@
+app = "folio-document-editor"
+primary_region = "iad"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  NODE_ENV = "production"
+  PORT = "3000"
+  DATABASE_PATH = "/data/folio.db"
+  COOKIE_SECURE = "true"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 1
+
+[mounts]
+  source = "folio_data"
+  destination = "/data"
