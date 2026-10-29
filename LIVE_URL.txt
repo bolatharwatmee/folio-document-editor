@@ -1,19 +1,16 @@
 # Folio — Live Product URL
-STATUS: READY FOR ONE-CLICK DEPLOY (RECOMMENDED: RENDER.COM)
+https://folio-document-editor.pages.dev
 
-A step-by-step free deployment guide has been prepared in DEPLOYMENT.md.
-Configuration files (render.yaml, fly.toml, and Dockerfile) are included in the repository.
+Deployment Platform: Cloudflare Pages + Cloudflare D1 (Serverless SQLite)
+Status: LIVE & VERIFIED
 
-RECOMMENDED FREE PLATFORM: Render.com (Web Service Free Tier)
-1. Push this folder to a GitHub repository.
-2. On Render.com, click "New Web Service" -> connect your repo.
-3. Build Command: npm install && npm run build
-4. Start Command: npm start
-5. Plan: Free
-6. Once deployed, replace this text with your active HTTPS URL:
-   e.g. https://folio-document-editor.onrender.com
+Reviewer Demo Access:
+1. Open https://folio-document-editor.pages.dev in any modern browser.
+2. Select any synthetic demo account from the login screen (no passwords needed):
+   - Alice Nguyen (usr_alice): Document owner account (owns "Welcome to Folio").
+   - Bob Ortega (usr_bob): Collaborator account (owns "Launch notes", shared recipient of Alice's welcome document).
+   - Carol Sato (usr_carol): Unrelated reviewer (owns private memo, completely isolated from Alice and Bob).
+3. Switch between accounts at any time from the account badge in the top-right navigation bar.
 
-LOCAL PRODUCTION TESTING:
-The full production build is verified locally and ready:
-- http://localhost:3000 (unified production build)
-- Pre-seeded synthetic accounts: Alice (owner), Bob (collaborator), Carol (unrelated reviewer).
+Local Alternative:
+http://localhost:3000 (unified single-process production build with native node:sqlite)

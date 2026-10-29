@@ -1,6 +1,9 @@
 # Folio — Collaborative Document Editor
 
-Folio is a small, deliberate collaborative document editor built as a Full Stack Product Engineer take-home assignment. Inspired by the core writing and sharing flows of Google Docs, Folio implements a focused, reliable end-to-end slice: rich-text formatting, explicit revision-checked saving, owner-controlled document sharing, UTF-8 `.txt` file import, and persistent storage backed by SQLite.
+> **Live Deployment**: [https://folio-document-editor.pages.dev](https://folio-document-editor.pages.dev)  
+> **Source Repository**: [https://github.com/bolatharwatmee/folio-document-editor](https://github.com/bolatharwatmee/folio-document-editor)
+
+Folio is a small, deliberate collaborative document editor built as a Full Stack Product Engineer take-home assignment. Inspired by the core writing and sharing flows of Google Docs, Folio implements a focused, reliable end-to-end slice: rich-text formatting, explicit revision-checked saving, owner-controlled document sharing, UTF-8 `.txt` file import, document export (Markdown, Text, Print/PDF), real-time search, and persistent storage backed by SQLite (and Cloudflare D1 in live deployment).
 
 ---
 

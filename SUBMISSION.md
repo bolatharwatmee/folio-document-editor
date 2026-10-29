@@ -16,7 +16,7 @@ This document serves as the master index and completion status for the Full Stac
 | **Test Verification Log** | [`TEST_RESULTS.md`](file:///Users/marina/TextEditor/TEST_RESULTS.md) | Empirical logs for Vitest suite (14/14 passing) and end-to-end multi-user restart checks. |
 | **Deployment Guide** | [`DEPLOYMENT.md`](file:///Users/marina/TextEditor/DEPLOYMENT.md) | Step-by-step free deployment on Render.com & Fly.io (`render.yaml`, `fly.toml`, `Dockerfile`). |
 | **Walkthrough Script** | [`WALKTHROUGH.md`](file:///Users/marina/TextEditor/WALKTHROUGH.md) | Rehearsal checklist and 4-minute timed script for the candidate's walkthrough screencast. |
-| **Live Product URL** | [`LIVE_URL.txt`](file:///Users/marina/TextEditor/LIVE_URL.txt) | Ready for one-click Render deployment; includes local endpoints and reviewer instructions. |
+| **Live Product URL** | [`LIVE_URL.txt`](file:///Users/marina/TextEditor/LIVE_URL.txt) | Deployed on Cloudflare Pages ([https://folio-document-editor.pages.dev](https://folio-document-editor.pages.dev)); verified live. |
 | **Video URL** | [`VIDEO_URL.txt`](file:///Users/marina/TextEditor/VIDEO_URL.txt) | Pending candidate recording; contains remaining actions for video link handoff. |
 
 ---
@@ -43,7 +43,7 @@ Folio includes a dedicated demo session mechanism. Reviewers do not need to regi
 | **3. User-to-User Sharing** | **Complete** | - Ownership tracked via `owner_id` foreign key.<br>- Owner-only sharing via `POST /api/documents/:id/shares`.<br>- Shared recipients can edit, but cannot grant shares (403 Forbidden).<br>- Unrelated users completely isolated (404 Not Found on all endpoints).<br>- Dashboard distinctly separates *My documents* vs. *Shared with me* with collaborator count badges.<br>- Verified in automated test `lets an owner share and a recipient edit, while unrelated users get 404`. |
 | **4. Persistence & Concurrency** | **Complete** | - Backed by SQLite via Node 24 native `node:sqlite` with WAL mode and foreign keys enabled.<br>- Data and sessions survive server shutdown and restart.<br>- Optimistic concurrency: each save checks `revision`; stale edits return 409 Conflict.<br>- Non-destructive conflict UI: "Save as Copy" or "Reload Latest".<br>- Local Storage crash recovery for drafts.<br>- Verified in automated tests `persists documents, shares, and sessions across a database restart` and `rejects stale saves instead of overwriting newer content`. |
 | **5. Engineering Quality** | **Complete** | - Full TypeScript strict typing across client, server, and tests.<br>- Zod metadata validation + ProseMirror AST recursive tree walker rejecting malicious markup.<br>- Strict Content Security Policy, Frameguard, and CSRF / Sec-Fetch-Site origin verification.<br>- 12 automated integration tests passing in Vitest with zero failures.<br>- Idempotent repeatable demo seed preserving user edits. |
-| **6. Live Deployment** | **Pending Owner Action** | - Packaged into a self-contained Node.js single-process build (`dist/server/index.js` serving built Vite SPA from `dist/client`).<br>- Requires single-instance host with a persistent disk volume for SQLite.<br>- Awaiting explicit candidate approval before provisioning external cloud resources. |
+| **6. Live Deployment** | **Complete** | Deployed live to Cloudflare Pages ([https://folio-document-editor.pages.dev](https://folio-document-editor.pages.dev)) backed by Cloudflare D1 serverless SQLite. Verified live authentication, document listing, creation, and 409 stale conflict rejection. |
 | **7. Walkthrough Video** | **Pending Owner Action** | - Comprehensive rehearsal checklist and timed script created in `WALKTHROUGH.md`.<br>- Screencast to be recorded and uploaded as unlisted link by candidate. |
 
 ---
@@ -62,9 +62,8 @@ Folio includes a dedicated demo session mechanism. Reviewers do not need to regi
 - Ready-to-deploy configuration for Render.com (`render.yaml`) and Fly.io (`fly.toml` & `Dockerfile`).
 
 ### What Remains Incomplete
-- **Live Cloud Deployment**: 1-click Render blueprint (`render.yaml`), Fly config, and `DEPLOYMENT.md` prepared; pending candidate pushing to GitHub and activating on Render.com.
-- **Walkthrough Video**: Script ready in `WALKTHROUGH.md`; pending candidate recording.
-- **Google Drive Folder Upload**: Source archive prepared; pending candidate confirmation of folder link and permissions.
+- **Walkthrough Video**: Script ready in [`WALKTHROUGH.md`](file:///Users/marina/TextEditor/WALKTHROUGH.md); pending candidate recording.
+- **Google Drive Folder Upload**: Source archive prepared in `dist-package/folio-source.tar.gz`; pending candidate confirmation of folder link and permissions.
 
 ### Best Future Enhancements (Beyond Core + Stretch)
 With additional time, the remaining nice-to-have enhancements would include:

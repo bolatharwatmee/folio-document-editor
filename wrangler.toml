@@ -1,0 +1,8 @@
+name = "folio-document-editor"
+pages_build_output_dir = "dist/client"
+compatibility_date = "2024-11-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "folio-db"
+database_id = "9592c5a0-e878-41e5-a6ad-2e262067fe2a"
